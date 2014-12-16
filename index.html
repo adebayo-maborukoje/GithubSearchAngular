@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="gitHubApp">
+<head>
+  <meta charset ="utf-8">
+<meta content-type="application/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GIT HUB|| BAYO</title>
+<link rel="shortcut icon" href="" /> 
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="gitHubController">
+  <header><div id="logo"><img src="images/logo.png"></div> <p>Let's Help You Look for anyone on GITHUB</p></header>
+  <main>
+
+    <form>
+       <input type="text" ng-model="search" id="search" name="search" placeholder="Type in a Name, Username or Organisation">
+       <input type="submit" id="submit" value="Search" ng-click="displayInfo()"> 
+    </form>
+   <div class="container">
+         <div  ng-bind="statusDisplay" id="statusDisplay"></div>
+         <ul ng-repeat="item in results" style="display:inline-block; list-style-type:none;">
+              <li >
+                 <img ng-src="{{ item.avatar_url }}" width="100" height="100" /><br/>
+                 <span> Scores : {{ item.score }} </span>
+              </li>
+         </ul>
+       </div>
+  </main>
+
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
